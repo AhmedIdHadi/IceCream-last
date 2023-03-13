@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+            * {
+              margin: 0px;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+              font-size: 22px;
+              border-radius: 5px;
+              color: #4f2926 !important;
+            }
+
+            .logo {
+              grid-area: logo;
+            }
+
+            .header {
+              grid-area: header;
+            }
+
+            .item2 {
+              grid-area: main;
+              display: inline-block;
+            }
+
+            .item3 {
+              grid-area: disc;
+              align-content: first baseline;
+            }
+
+            .item4 {
+              grid-area: right;
+            }
+
+            /* .item5 {
+                grid-area: footer;
+              } */
+            .logo {
+              width: 200px;
+              height: auto;
+            }
+
+            ul {
+              display: flex;
+              /* width: ; */
+              align-items: center;
+              justify-content: center;
+              list-style-type: none;
+              padding: 0px;
+              background-color: #ee9898;
+            }
+
+            li a {
+              color: rgb(9, 9, 9);
+              text-align: center;
+              padding: 16px;
+              width: 300px;
+              text-decoration: none;
+            }
+
+            a {
+              transition: all 0.5s ease-in-out;
+            }
+
+            li a:hover {
+              background-color: #ef7878;
+
+            }
+
+            .first {
+              width: 100px;
+              height: auto;
+              font-size: 20px;
+            }
+
+            .second {
+              width: 100px;
+              height: auto;
+            }
+
+            .third {
+              width: 100px;
+              height: auto;
+            }
+
+            .fourth {
+              width: 100px;
+              height: auto;
+            }
+
+            /* img:hover {
+              box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            } */
+            .logo {
+              transition: all ease 0.5s;
+              grid-area: logo;
+            }
+
+            .logo:hover {
+              scale: 1.1
+            }
+
+            header {
+              grid-column: 2/9;
+            }
+
+            .line-1 {
+              font-size: 45px;
+              font-family: fantasy;
+              text-align: center;
+              padding: 100px;
+              color: darksalmon;
+              background: beige;
+
+            }
+
+            .line-2 {
+              font-size: 25px;
+              color: #822c4e;
+              letter-spacing: 3px;
+            }
+
+            .line-3 {
+              background: white;
+              display: grid;
+              grid-template-areas:
+                /* "auto iceTitle iceTitle iceTitle iceTitle auto"
+                "auto iceSubTitle iceSubTitle iceSubTitle iceSubTitle auto" */
+                "auto ice1 ice2 ice3 ice4 auto"
+              ;
+              gap: 0px;
+            }
+
+            .order {
+              margin-left: 100px;
+              transition: all 0.5s ease-in-out;
+              box-shadow: #4f2926 0px 2px 5px -1px;
+
+
+
+            }
+
+            .order:hover {
+              box-shadow: #4f2926 0px 0px 0px 0px;
+
+            }
+
+            button {
+              background-color: rgba(204, 99, 131, 1);
+              color: white !important;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+            }
+
+            button:hover {
+              opacity: 0.8;
+            }
+
+            figcaption {
+              font-size: 15px;
+            }
+
+            .footer {
+              grid-area: footer;
+              position: fixed;
+              left: 20;
+              right: 20;
+              bottom: 20;
+              width: auto;
+              height: 30;
+              background-color: red;
+              color: white;
+              display: inline-block;
+            }
+
+            .copy {
+              color: #ef7878;
+              font-size: 35px;
+            }
+
+            .grid-container {
+              display: grid;
+              grid-template-areas:
+                "logo header header header header auto"
+                "disc disc disc disc disc disc"
+                "main main main main main main"
+                "menu footer footer footer footer footer";
+              gap: 0px;
+              background-color: rgb(179, 19, 48);
+              padding: 40px;
+            }
+
+            .grid-container>div {
+              background-color: rgba(255, 255, 255, 0.8);
+              text-align: center;
+              padding: 20px 0;
+              font-size: 30px;
+            }
+
+            .iceFlavour {
+              grid-area: ice
+            }
+
+            .iceTitle {
+              grid-area: iceTitle
+            }
+
+            .iceSubT {
+              grid-area: iceSubTitle
+            }
+
+            .ice1 {
+              grid-area: ice1;
+              z-index: 9;
+              background: #86f151;
+              border-radius: 60px;
+              height: auto;
+              width: 200px;
+              display: block;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              margin-top: 10px;
+
+              border: 4px red solid;
+
+            }
+
+            .ice1img {
+              margin-top: -100px;
+              height: 90%;
+              object-fit: content;
+            }
+
+            .ice1txt {
+              text-align: center;
+            }
+
+            .ice2 {
+              grid-area: ice2
+              z-index: 9;
+              background: #ffa62b;
+              border-radius: 60px;
+              height: auto;
+              width: 200px;
+              display: block;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              margin-top: 10px;
+      border: 4px red solid;
+            }
+
+            .ice2img {
+              margin-top: -100px;
+              height: 90%;
+              object-fit: content;
+            }
+
+            .ice2txt {
+              text-align: center;
+            }
+
+
+            .ice3 {
+              grid-area: ice3
+              z-index: 9;
+              background: #50EBEC;
+              border-radius: 60px;
+              height: auto;
+              width: 200px;
+              display: block;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              margin-top: 10px;
+
+            }
+
+            .ice3img {
+              margin-top: -100px;
+              height: 90%;
+              object-fit: content;
+            }
+
+            .ice3txt {
+              text-align: center;
+            }
+
+            .ice4 {
+              grid-area: ice4
+              z-index: 9;
+              background: rgba(243, 210, 220, 0.7);
+              border-radius: 60px;
+              height: auto;
+              width: 200px;
+              display: block;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              margin-top: 10px;
+
+            }
+
+            .ice4img {
+              margin-top: -100px;
+              height: 90%;
+              object-fit: content;
+            }
+
+            .ice4txt {
+              text-align: center;
+            }
+
+            ;
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <img src="logo.PNG" alt="Logo" class="logo" />
+
+      <ul class="list header">
+        <li class="red"><a href="#">Home</a></li>
+        <li class="gold"><a href="#">Scoops</a></li>
+        <li class="pars"><a href="#">IceCream</a></li>
+        <li class="green"><a href="#">Contact us</a></li>
+        <button class="order">Order Now</button>
+      </ul>
+    </div>
+
+    <section class="line-1">
+      Life is like an Ice Cream
+      <p class="line-2">Enjoy it before it melts</p>
+    </section>
+    <section class="line-3">
+      <!-- the first photo -->
+      <div class="ice1">
+        <img src="strawb.png" alt="strawb" class="ice1img" />
+        <h1 class="ice1txt">Kiwi</h1>
+        <div class="ice1txt">€ 1.10,-</div>
+      </div>
+      <!-- the second photo -->
+      <div class="ice2">
+        <img src="strawb.png" alt="strawb" class="ice2img" />
+        <h1 class="ice2txt">Juicy Mango</h1>
+        <div class="ice2txt">€ 2.10,-</div>
+      </div>
+      <!-- the third photo -->
+      <div class="ice3">
+        <img src="strawb.png" alt="strawb" class="ice3img" />
+        <h1 class="ice3txt">strawberry</h1>
+        <div class="ice3txt">€ 3.10,-</div>
+      </div>
+      <!-- the fourth photo -->
+      <div class="ice4">
+        <img src="strawb.png" alt="strawb" class="ice4img" />
+        <h1 class="ice4txt">Gem Scoops</h1>
+        <div class="ice4txt">€ 4.10,-</div>
+      </div>
+    </section>
+
+    <!-- <div class="item2">
+      <figure>
+        <img src="Bmore.jpeg" alt="First Photo" class="first" ">
+          <figcaption>5,5€</figcaption>
+        </figure>
+        <figure>
+          <img src=" iceblue.jpeg" alt="Second Photo" class="second" />
+        <figcaption>4,5€</figcaption>
+      </figure>
+      <figure>
+        <img src="Pistachio.jpeg" alt="Third Photo" class="third" />
+        <figcaption>3,8€</figcaption>
+      </figure>
+      <figure>
+        <img src="pexels.jpeg" alt="Fourth Photo" class="fourth" />
+        <figcaption>5€</figcaption>
+      </figure>
+    </div>
+    <div class="item3">
+      <h1 class="line-1">Life is like an Ice Cream</h1>
+      <p class="line-2">Enjoy it before it melts</p>
+    </div>
+    <!-- <div class="footer">
+        <p class="copy">Copyright 2023</p>
+      </div> -->
+  </body>
+</html>
